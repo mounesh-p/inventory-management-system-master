@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Daily Purchase Report </h4><br><br>
-                            <form method="GET" action="{{ route('daily.purchase.pdf') }}" target="_blank" id="myForm">
+                            <form method="GET" action="{{ route('daily.purchase.pdf') }}" id="myForm">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="md-3 form-group">

@@ -21,19 +21,24 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <strong> Customer Wise Credit Report </strong>
-                                    <input type="radio" name="customer_wise_report" value="customer_wise_credit"
-                                        class="search_value"> &nbsp;&nbsp;
-                                    <strong> Customer Wise Paid Report </strong>
-                                    <input type="radio" name="customer_wise_report" value="customer_wise_paid"
-                                        class="search_value">
+                                    <label style="cursor: pointer;" class="me-3">
+                                        <input type="radio" name="customer_wise_report" value="customer_wise_credit"
+                                            class="search_value">
+                                        <strong>Customer Wise Credit Report</strong>
+                                    </label>
+
+                                    <label style="cursor: pointer;">
+                                        <input type="radio" name="customer_wise_report" value="customer_wise_paid"
+                                            class="search_value">
+                                        <strong>Customer Wise Paid Report</strong>
+                                    </label>
                                 </div>
-                            </div> <!-- // end row  -->
+                            </div>
+
 
                             <!--  /// Customer Credit Wise  -->
                             <div class="show_credit" style="display:none">
-                                <form method="GET" action="{{ route('customer.wise.credit.report') }}" id="myForm"
-                                    target="_blank">
+                                <form method="GET" action="{{ route('customer.wise.credit.report') }}" id="myForm">
 
                                     <div class="row">
                                         <div class="col-sm-8 form-group">
@@ -55,8 +60,7 @@
 
                             <!--  /// show_paid  -->
                             <div class="show_paid" style="display:none">
-                                <form method="GET" action="{{ route('customer.wise.paid.report') }}" id="myForm"
-                                    target="_blank">
+                                <form method="GET" action="{{ route('customer.wise.paid.report') }}" id="myForm">
                                     <div class="row">
                                         <div class="col-sm-8 form-group">
                                             <label>Customer Name </label>

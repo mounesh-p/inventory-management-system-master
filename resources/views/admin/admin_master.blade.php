@@ -4,9 +4,9 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Dashboard | Easy Inventory Shop </title>
+    <title>Dashboard | Inventory Manage </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Easy Inventory Shop" name="description" />
     <meta content="Themesdesign" name="author" />
 
     <!-- App favicon -->

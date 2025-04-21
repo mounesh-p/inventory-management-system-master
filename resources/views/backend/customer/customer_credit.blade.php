@@ -16,7 +16,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <a href="{{ route('credit.customer.print.pdf') }}" target="_blank"
+                            <a href="{{ route('credit.customer.print.pdf') }}"
                                 class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i
                                     class="fa fa-print"> Print Credit Customer </i></a> <br> <br>
                             <h4 class="card-title">Credit Customer Data </h4>
@@ -38,14 +38,15 @@
                                             <td> {{ $item['customer']['name'] }} </td>
                                             <td> #{{ $item['invoice']['invoice_no'] }} </td>
                                             <td> {{ date('d-m-Y', strtotime($item['invoice']['date'])) }} </td>
-                                            <td> {{ number_format($item->due_amount) ? number_format($item->due_amount) : "-----" }} </td>
+                                            <td> {{ number_format($item->due_amount) ? number_format($item->due_amount) : '-----' }}
+                                            </td>
                                             <td>
                                                 <a href="{{ route('customer.edit.invoice', $item->invoice_id) }}"
                                                     class="btn btn-info sm" title="Edit Data"> <i class="fas fa-edit"></i>
                                                 </a>
                                                 <a href="{{ route('customer.invoice.details.pdf', $item->invoice_id) }}"
-                                                    target="_blank" class="btn btn-danger sm"
-                                                    title="Customer Invoice Details"> <i class="fa fa-eye"></i> </a>
+                                                    class="btn btn-danger sm" title="Customer Invoice Details"> <i
+                                                        class="fa fa-eye"></i> </a>
                                             </td>
                                         </tr>
                                     @endforeach

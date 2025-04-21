@@ -19,8 +19,8 @@
                           {{-- <img src="{{ asset('backend/assets/images/logo-sm.pnggg') }}" alt="logo-sm-light"
                               height="22"> --}}
                       </span>
-                      <span class="logo-lg pt-4">
-                          <h2> <b class="text-white mt-2 logo-light"> BillWise </b></h2>
+                      <span class="logo-lg pt-4 mt-4">
+                          <h2> <b class="text-white mt-4 logo-light"> BillWise </b></h2>
                           {{-- <img src="{{ asset('backend/assets/images/logo-light.pnggg') }}" alt="logo-light"
                               height="20"> --}}
                       </span>

@@ -23,7 +23,7 @@ class DashBoardController extends Controller
         $today_total_purchase = Purchase::whereDate('created_at', Carbon::today())->get();
 
         // Latest 10 transactions
-        $latest_transactions = Payment::latest()->take(10)->get();
+        $latest_transactions = Payment::latest()->take(100)->get();
         // dd($latest_transactions);
         return view('admin.index', compact('total_sales','total_dues','total_purchase','today_total_sales','today_total_dues','today_total_purchase','latest_transactions'));
     }
