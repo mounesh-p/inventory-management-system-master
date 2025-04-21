@@ -27,26 +27,10 @@
 
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="invoice-title">
-                                        <h3>
-                                            <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo"
-                                                height="24" /> Shop Name
-                                        </h3>
-                                    </div>
+                                    <x-shopname />
                                     <hr>
                                     <div class="row">
-                                        <div class="col-6 mt-4">
-                                            <address>
-                                                <strong>ShopName:</strong><br>
-                                                Purana Palton Dhaka<br>
-                                                support@ShopName.com
-                                            </address>
-                                        </div>
-                                        <div class="col-6 mt-4 text-end">
-                                            <address>
-
-                                            </address>
-                                        </div>
+                                        <x-shopaddress />
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +69,8 @@
                                                                 <td class="text-center">
                                                                     {{ date('d-m-Y', strtotime($item['invoice']['date'])) }}
                                                                 </td>
-                                                                <td class="text-center"> ₹{{ number_format($item->due_amount) }} </td>
+                                                                <td class="text-center">
+                                                                    ₹{{ number_format($item->due_amount) }} </td>
                                                             </tr>
                                                             @php
                                                                 $total_due += $item->due_amount;
@@ -99,7 +84,9 @@
                                                                 <strong>Grand Due Amount</strong>
                                                             </td>
                                                             <td class="no-line text-center">
-                                                                <h4 class="m-0">{{ $total_due ? "₹".number_format($total_due) : "-----" }}</h4>
+                                                                <h4 class="m-0">
+                                                                    {{ $total_due ? '₹' . number_format($total_due) : '-----' }}
+                                                                </h4>
                                                             </td>
                                                         </tr>
                                                     </tbody>

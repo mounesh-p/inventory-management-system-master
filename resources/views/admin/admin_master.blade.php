@@ -44,15 +44,15 @@
 <body data-topbar="dark" data-sidebar="dark">
 
     <!-- <body data-layout="horizontal" data-topbar="dark"> -->
-         <!-- Loader -->
+    <!-- Loader -->
 
-         {{-- <div id="preloader">
-            <div id="status">
-                <div class="spinner">
-                    <i class="ri-loader-line spin-icon"></i>
-                </div>
+    {{-- <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <i class="ri-loader-line spin-icon"></i>
             </div>
-        </div> --}}
+        </div>
+    </div> --}}
 
     <!-- Begin page -->
     <div id="layout-wrapper">
@@ -169,17 +169,17 @@
     <script src="{{ asset('backend/assets/js/pages/form-advanced.init.js') }}"></script>
     <!-- end  For Select2 -->
 
-   {{-- <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script> --}}
+    {{-- <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script> --}}
     {{-- <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script> --}}
     <script src="{{ asset('backend/assets/libs/metismenu/metisMenu.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
 
     <!-- form mask -->
-   <script src="{{ asset('backend/assets/libs/inputmask/jquery.inputmask.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/inputmask/jquery.inputmask.min.js') }}"></script>
 
     <!-- form mask init -->
-      <script src="{{ asset('backend/assets/js/pages/form-mask.init.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/pages/form-mask.init.js') }}"></script>
 
     {{-- <script src="{{ asset('backend/assets/js/app.js') }}"></script> --}}
 

@@ -40,6 +40,16 @@
                     <h4 class="text-muted text-center font-size-18"><b>Register</b></h4>
                     <div class="p-3">
                         <form class="form-horizontal mt-3" method="POST" action="{{ route('register') }}">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul class="mb-0">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             @csrf
                             <div class="form-group mb-3 row">
                                 <div class="col-12">

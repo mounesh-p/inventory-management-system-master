@@ -28,29 +28,10 @@
 
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="invoice-title">
-
-                                        <h3>
-                                            <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo"
-                                                height="24" /> Shop Name
-                                        </h3>
-                                    </div>
+                                    <x-shopname />
                                     <hr>
 
-                                    <div class="row">
-                                        <div class="col-6 mt-4">
-                                            <address>
-                                                <strong>Shop Name:</strong><br>
-                                                Address <br>
-                                                support@shop.com
-                                            </address>
-                                        </div>
-                                        <div class="col-6 mt-4 text-end">
-                                            <address>
-
-                                            </address>
-                                        </div>
-                                    </div>
+                                    <x-shopaddress />
                                 </div>
                             </div>
 
@@ -88,7 +69,7 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <td><strong>Sl </strong></td>
+                                                            <td class="text-center"><strong>Sl </strong></td>
                                                             <td class="text-center"><strong>Supplier Name </strong></td>
                                                             <td class="text-center"><strong>Unit </strong>
                                                             </td>

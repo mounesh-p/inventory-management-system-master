@@ -14,13 +14,13 @@
 
                   <a href="{{ route('dashboard') }}" class="logo logo-light">
                       <span class="logo-sm pt-4">
-                        <div></div>
-                       <h4><b class="text-white mt-2 logo-sm-light"> BW </b></h4>
+                          <div></div>
+                          <h4><b class="text-white mt-2 logo-sm-light"> BW </b></h4>
                           {{-- <img src="{{ asset('backend/assets/images/logo-sm.pnggg') }}" alt="logo-sm-light"
                               height="22"> --}}
                       </span>
                       <span class="logo-lg pt-4">
-                        <h2> <b class="text-white mt-2 logo-light"> BillWise </b></h2>
+                          <h2> <b class="text-white mt-2 logo-light"> BillWise </b></h2>
                           {{-- <img src="{{ asset('backend/assets/images/logo-light.pnggg') }}" alt="logo-light"
                               height="20"> --}}
                       </span>
@@ -31,12 +31,12 @@
                   <i class="align-middle ri-menu-2-line"></i>
               </button>
               <!-- App Search-->
-              <form class="app-search d-none d-lg-block">
+              {{-- <form class="app-search d-none d-lg-block">
                   <div class="position-relative">
                       <input type="text" class="form-control" placeholder="Search...">
                       <span class="ri-search-line"></span>
                   </div>
-              </form>
+              </form> --}}
           </div>
           <div class="d-flex">
               <div class="dropdown d-none d-lg-inline-block ms-1">
@@ -64,11 +64,11 @@
                               class="align-middle ri-user-line me-1"></i> Profile</a>
                       <a class="dropdown-item" href="{{ route('change.password') }}"><i
                               class="align-middle ri-wallet-2-line me-1"></i> Change Password</a>
-                      <a class="dropdown-item d-block" href="#"><span
+                      {{-- <a class="dropdown-item d-block" href="#"><span
                               class="mt-1 badge bg-success float-end">11</span><i
-                              class="align-middle ri-settings-2-line me-1"></i> Settings</a>
-                      <a class="dropdown-item" href="#"><i class="align-middle ri-lock-unlock-line me-1"></i> Lock
-                          screen</a>
+                              class="align-middle ri-settings-2-line me-1"></i> Settings</a> --}}
+                      {{-- <a class="dropdown-item" href="#"><i class="align-middle ri-lock-unlock-line me-1"></i> Lock
+                          screen</a> --}}
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item text-danger" href="{{ route('admin.logout') }}"><i
                               class="align-middle ri-shut-down-line me-1 text-danger"></i> Logout</a>

@@ -30,17 +30,20 @@ class CustomerController extends Controller
     public function CustomerStore(Request $request)
     {
 
-        $image = $request->file('customer_image');
-        $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension(); // 343434.png
-        Image::make($image)->resize(200, 200)->save('upload/customer/' . $name_gen);
-        $save_url = 'upload/customer/' . $name_gen;
+        if($request->file('customer_image')){
+            $image = $request->file('customer_image');
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension(); // 343434.png
+            Image::make($image)->resize(200, 200)->save('upload/customer/' . $name_gen);
+            $save_url = 'upload/customer/' . $name_gen;
+        }
+
 
         Customer::insert([
             'name' => $request->name,
             'mobile_no' => $request->mobile_no,
             'email' => $request->email,
             'address' => $request->address,
-            'customer_image' => $save_url,
+            'customer_image' => $save_url ?? null,
             'created_by' => Auth::user()->id,
             'created_at' => Carbon::now(),
 

@@ -319,27 +319,13 @@
         <div class="col-xl-10">
             <div class="card">
                 <div class="card-body">
-                    <div class="dropdown float-end">
-                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="mdi mdi-dots-vertical"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                        </div>
-                    </div>
 
                     <h4 class="card-title mb-4">Latest Transactions</h4>
 
                     <div class="table-responsive">
                         <table class="table table-centered mb-0 align-middle table-hover table-nowrap">
-                            <thead  class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                            <thead class="table table-striped table-bordered dt-responsive nowrap"
+                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <tr>
                                     <th>Cstomer Name</th>
                                     <th>Invoive No</th>
@@ -352,23 +338,23 @@
                             <!-- end thead -->
                             <tbody>
                                 @foreach ($latest_transactions as $latest_transaction)
-                                <tr>
-                                    <td>
-                                        <h6 class="mb-0">{{ $latest_transaction['customer']['name'] }}</h6>
-                                    </td>
-                                    <td>#{{ $latest_transaction->invoice_id }}</td>
-                                    <td>
-                                        <div class="font-size-13">
-                                            {{ date('d-m-Y',strtotime($latest_transaction->created_at))  }}</div>
-                                    </td>
-                                    <td>
-                                        {{ $latest_transaction->due_amount ? $latest_transaction->due_amount : "----" }}
-                                    </td>
-                                    <td>
-                                        {{ $latest_transaction->paid_amount }}
-                                    </td>
-                                    <td>{{ $latest_transaction->total_amount }}</td>
-                                </tr>
+                                    <tr>
+                                        <td>
+                                            <h6 class="mb-0">{{ $latest_transaction['customer']['name'] }}</h6>
+                                        </td>
+                                        <td>#{{ $latest_transaction->invoice_id }}</td>
+                                        <td>
+                                            <div class="font-size-13">
+                                                {{ date('d-m-Y', strtotime($latest_transaction->created_at)) }}</div>
+                                        </td>
+                                        <td>
+                                            {{ $latest_transaction->due_amount ? $latest_transaction->due_amount : '----' }}
+                                        </td>
+                                        <td>
+                                            {{ $latest_transaction->paid_amount }}
+                                        </td>
+                                        <td>{{ $latest_transaction->total_amount }}</td>
+                                    </tr>
                                 @endforeach
 
                                 <!-- end -->
@@ -384,7 +370,4 @@
         </div>
 
     </div>
-
-
-
-    @endsection
+@endsection

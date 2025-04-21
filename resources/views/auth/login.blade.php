@@ -32,8 +32,8 @@
                     <div class="text-center mt-4">
                         <div class="mb-3">
                             {{-- <a href="index.html" class="auth-logo"> --}}
-                                <h2><b class="text-secondary"><strong>BillWise</strong></b></h2>
-                                {{-- <img src="{{ asset('backend/assets/images/logo-dark.png') }}" height="30"
+                            <h2><b class="text-secondary"><strong>BillWise</strong></b></h2>
+                            {{-- <img src="{{ asset('backend/assets/images/logo-dark.png') }}" height="30"
                                     class="logo-dark mx-auto" alt="">
                                 <img src="{{ asset('backend/assets/images/logo-light.png') }}" height="30"
                                     class="logo-light mx-auto" alt=""> --}}
@@ -43,6 +43,15 @@
                     <h4 class="text-muted text-center font-size-18"><b>Sign In</b></h4>
                     <div class="p-3">
                         <form class="form-horizontal mt-3" method="POST" action="{{ route('login') }}">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul class="mb-0">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             @csrf
                             <div class="form-group mb-3 row">
                                 <div class="col-12">

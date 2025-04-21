@@ -28,32 +28,13 @@
 
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="invoice-title">
-                                        <h4 class="float-end font-size-16"><strong>Invoice No #
-                                                {{ $invoice->invoice_no }}</strong></h4>
-                                        <h3>
-                                            {{-- <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo"
-                                                height="24" /> --}}
-                                                 Ambica Chemicals
-                                        </h3>
-                                    </div>
+
+
+                                    <x-shopname :invoiceno="$invoice->invoice_no" />
                                     <hr>
 
-                                    <div class="row">
-                                        <div class="col-6 mt-4">
-                                            <address>
-                                                <strong>Ambica Chemicals:</strong><br>
-                                                Teli patil Galli Shahapur Belagavi<br>
-                                                9876543210
-                                            </address>
-                                        </div>
-                                        <div class="col-6 mt-4 text-end mr-4 ">
-                                            <address>
-                                                <strong>Invoice Date</strong><br>
-                                                {{ date('d-m-Y', strtotime($invoice->date)) }} <br><br>
-                                            </address>
-                                        </div>
-                                    </div>
+                                    <x-shopaddress :invoiceDate="$invoice->date" />
+
                                 </div>
                             </div>
 
@@ -87,7 +68,9 @@
                                                             <td class="text-center">{{ $payment['customer']['mobile_no'] }}
                                                             </td>
                                                             <td class="text-center">{{ $payment['customer']['email'] }}</td>
-                                                            <td class="text-center">{{ $invoice->description ? $invoice->description : "-----" }}</td>
+                                                            <td class="text-center">
+                                                                {{ $invoice->description ? $invoice->description : '-----' }}
+                                                            </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -167,7 +150,8 @@
                                                                     <strong>GST ({{ $payment->tax }}) %</strong>
                                                                 </td>
                                                                 <td class="no-line text-center">
-                                                                    ₹ {{ ($total_sum - $payment->discount_amount) * $payment->tax  / 100}}
+                                                                    ₹
+                                                                    {{ (($total_sum - $payment->discount_amount) * $payment->tax) / 100 }}
                                                                 </td>
                                                             </tr>
                                                         @endif
@@ -196,7 +180,8 @@
                                                             <td class="no-line text-end">
                                                                 <strong>Paid Amount</strong>
                                                             </td>
-                                                            <td class="no-line text-center">₹ {{ $payment->paid_amount }}</td>
+                                                            <td class="no-line text-center">₹ {{ $payment->paid_amount }}
+                                                            </td>
                                                         </tr>
                                                         @if ($payment->due_amount === 0)
                                                             <tr class="">
@@ -208,7 +193,8 @@
                                                                 <td class="no-line text-end ">
                                                                     <strong>Due Amount</strong>
                                                                 </td>
-                                                                <td class="no-line text-center">{{ $payment->due_amount == 0 ? "-----" : "₹".$payment->due_amount}}
+                                                                <td class="no-line text-center">
+                                                                    {{ $payment->due_amount == 0 ? '-----' : '₹' . $payment->due_amount }}
                                                                 </td>
                                                             </tr>
                                                         @endif

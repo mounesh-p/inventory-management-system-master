@@ -25,7 +25,8 @@
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Customer Mobile </label>
                                     <div class="form-group col-sm-10">
                                         <input name="mobile_no" id="input-repeat" class="form-control input-mask"
-                                        data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false" inputmode="text" minlength="10" required>
+                                            data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false" inputmode="text"
+                                            minlength="10" required>
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -97,7 +98,7 @@
                         required: true,
                     },
                     customer_image: {
-                        required: true,
+                        required: false,
                     },
                 },
                 messages: {

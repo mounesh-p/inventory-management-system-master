@@ -26,30 +26,12 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="invoice-title">
-                                        <h4 class="float-end font-size-16"><strong>Invoice No #
-                                                {{ $payment['invoice']['invoice_no'] }}</strong></h4>
-                                        <h3>
-                                            <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo"
-                                                height="24" /> Shop Name
-                                        </h3>
-                                    </div>
+
+                                    <x-shopname :invoiceno="$payment['invoice']['invoice_no']" />
                                     <hr>
-                                    <div class="row">
-                                        <div class="col-6 mt-4">
-                                            <address>
-                                                <strong>Shop Name:</strong><br>
-                                                Address <br>
-                                                support@shop.com
-                                            </address>
-                                        </div>
-                                        <div class="col-6 mt-4 text-end">
-                                            <address>
-                                                <strong>Invoice Date</strong><br>
-                                                {{ date('d-m-Y', strtotime($payment['invoice']['date'])) }} <br><br>
-                                            </address>
-                                        </div>
-                                    </div>
+
+                                    <x-shopaddress :invoiceDate="$payment['invoice']['date']" />
+
                                 </div>
                             </div>
                             <div class="row">
@@ -113,7 +95,10 @@
                                                         <!-- foreach ($order->lineItems as $line) or some such thing here -->
                                                         @php
                                                             $total_sum = '0';
-                                                            $invoice_details = App\Models\InvoiceDetail::where('invoice_id', $payment->invoice_id)->get();
+                                                            $invoice_details = App\Models\InvoiceDetail::where(
+                                                                'invoice_id',
+                                                                $payment->invoice_id,
+                                                            )->get();
                                                         @endphp
                                                         @foreach ($invoice_details as $key => $details)
                                                             <tr>
@@ -185,7 +170,8 @@
                                                                 <strong>Due Amount</strong>
                                                             </td>
                                                             <td class="no-line text-center">
-                                                                {{ number_format($payment->due_amount) ? "₹".number_format($payment->due_amount) : "-----" }}</td>
+                                                                {{ number_format($payment->due_amount) ? '₹' . number_format($payment->due_amount) : '-----' }}
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             {{-- <td class="no-line"></td> --}}
@@ -213,7 +199,10 @@
                                                                 style="text-align: center;font-weight: bold;">Amount</td>
                                                         </tr>
                                                         @php
-                                                            $payment_details = App\Models\PaymentDetail::where('invoice_id', $payment->invoice_id)->get();
+                                                            $payment_details = App\Models\PaymentDetail::where(
+                                                                'invoice_id',
+                                                                $payment->invoice_id,
+                                                            )->get();
                                                         @endphp
 
                                                         @foreach ($payment_details as $item)
